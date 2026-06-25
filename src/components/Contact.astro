@@ -27,8 +27,8 @@ const columns = [
     </p>
 
     <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 mb-16">
-      {columns.map((c) => (
-        <div class="flex flex-col items-center">
+      {columns.map((c, i) => (
+        <div class="flex flex-col items-center" data-reveal style={`--reveal-delay: ${i * 0.1}s`}>
           <Icon name={c.icon} class="w-6 h-6 text-gold mb-4" />
           {c.lines.map((line, i) => (
             <p class={i === 0 ? "text-primary" : "text-muted text-sm mt-1"}>{line}</p>

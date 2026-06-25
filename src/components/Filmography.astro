@@ -1,47 +1,48 @@
 ---
 const films = [
+   {
+    title: "Alteration",
+    subtitle: "",
+    year: "2022",
+    role: "Main Role",
+    image: "/images/films/film-evrilish.png",
+  },
   {
     title: "Blind Sherlock",
     subtitle: "Netflix Series",
     year: "2026",
     role: "Episode Role",
-    image: "/images/film-blind-sherlock.jpg",
+    image: "/images/films/sherlock.png",
   },
   {
     title: "The Grand Amir and Donna Maria",
     subtitle: "",
     year: "2025",
     role: "Episode Role",
-    image: "/images/film-grand-amir.jpg",
+    image: "/images/films/film-grand-amir.png",
   },
   {
     title: "Out",
     subtitle: "Web Series",
     year: "2025",
     role: "Main Role",
-    image: "/images/film-out.jpg",
+    image: "/images/films/film-out.png",
   },
   {
     title: "Qora Kitob",
     subtitle: "",
     year: "2025",
     role: "Episode Role",
-    image: "/images/film-qora-kitob.jpg",
+    image: "/images/films/film-qora-kitob.png",
   },
   {
     title: "Ofitser 55",
     subtitle: "TV Series",
     year: "2023",
     role: "Episode Role",
-    image: "/images/film-ofitser-55.jpg",
+    image: "/images/films/film-ofitser-55.png",
   },
-  {
-    title: "Alteration",
-    subtitle: "",
-    year: "2022",
-    role: "Main Role",
-    image: "/images/film-alteration.jpg",
-  },
+ 
 ];
 ---
 
@@ -53,13 +54,13 @@ const films = [
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {films.map((f) => (
-        <article class="group bg-card border border-divider overflow-hidden">
-          <div class="relative aspect-[4/3] overflow-hidden">
+      {films.map((f, i) => (
+        <article class="group bg-card border border-divider overflow-hidden" data-reveal style={`--reveal-delay: ${Math.min(i * 0.08, 0.4)}s`}>
+          <div class="relative aspect-[3/2] overflow-hidden">
             <img
               src={f.image}
               alt={f.title}
-              class="w-full h-full object-cover photo-treated group-hover:scale-105 transition-transform duration-500"
+              class="w-full h-full object-cover photo-treated group-hover:scale-105 transition-transform duration-500 ease-out"
             />
             <span class="absolute top-3 right-3 bg-ink/80 border border-gold text-gold font-accent text-xs px-2.5 py-1 tracking-[0.05em]">
               {f.year}

@@ -1,22 +1,19 @@
 ---
 import Icon from "./Icon.astro";
 import SocialLinks from "./SocialLinks.astro";
-import AwardBadge from "./AwardBadge.astro";
 ---
 
 <section class="relative min-h-screen bg-ink overflow-hidden flex items-center">
 
-  <!-- Right: Actor photo (full-bleed, absolute) -->
-  <div class="absolute right-0 top-0 w-[62%] h-full">
-    <img
-      src="/images/hero.jpg"
-      alt="Ulmas Uraev, actor"
-      class="w-full h-full object-cover object-top photo-treated"
-    />
-    <!-- Blend left edge into background -->
-    <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/55 to-transparent"></div>
-    <!-- Subtle bottom fade -->
-    <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-ink to-transparent"></div>
+  <!-- Right: Actor photo (badge baked into the image, bigger and shifted toward center) -->
+  <div class="hero-fade-up absolute right-0 md:right-6 top-20 md:top-24 bottom-16 w-[40%] sm:w-[55%] lg:w-[54%]" style="--reveal-delay: 0.1s">
+    <div class="relative w-full h-full overflow-hidden">
+      <img
+        src="/images/hero_new.jpg"
+        alt="Ulmas Uraev, actor"
+        class="w-full h-full object-cover object-top lg:object-right-top"
+      />
+    </div>
   </div>
 
   <!-- Main content -->
@@ -24,18 +21,18 @@ import AwardBadge from "./AwardBadge.astro";
     <div class="max-w-[500px]">
 
       <!-- Eyebrow -->
-      <p class="eyebrow text-[11px] mb-6 tracking-[0.18em]">
+      <p class="hero-fade-up eyebrow text-[11px] mb-6 tracking-[0.18em]" style="--reveal-delay: 0.05s">
         Actor | Theatre & Film Artist
       </p>
 
       <!-- Title -->
-      <h1 class="font-display font-light leading-[0.88] mb-8 tracking-tight">
+      <h1 class="hero-fade-up font-display font-light leading-[0.88] mb-8 tracking-tight" style="--reveal-delay: 0.15s">
         <span class="block text-[5.5rem] sm:text-[7rem] md:text-[8rem] text-primary">ULMAS</span>
         <span class="block text-[5.5rem] sm:text-[7rem] md:text-[8rem] text-gold">URAEV</span>
       </h1>
 
       <!-- Quote -->
-      <div class="flex items-start gap-3 mb-10">
+      <div class="hero-fade-up flex items-start gap-3 mb-10" style="--reveal-delay: 0.28s">
         <span class="text-gold font-display text-5xl leading-[0.75] flex-shrink-0 mt-1 select-none">&ldquo;</span>
         <p class="font-display italic text-xl md:text-[1.35rem] text-primary/80 leading-relaxed">
           Every role is a new life.<br />
@@ -44,7 +41,7 @@ import AwardBadge from "./AwardBadge.astro";
       </div>
 
       <!-- Buttons -->
-      <div class="flex flex-wrap items-center gap-4 mb-10">
+      <div class="hero-fade-up flex flex-wrap items-center gap-4 mb-10" style="--reveal-delay: 0.4s">
         <a
           href="https://www.youtube.com/watch?v=om4ZXlZPOj0"
           target="_blank"
@@ -60,13 +57,21 @@ import AwardBadge from "./AwardBadge.astro";
       </div>
 
       <!-- Social icons -->
-      <SocialLinks />
+      <div class="hero-fade-up" style="--reveal-delay: 0.5s">
+        <SocialLinks />
+      </div>
     </div>
   </div>
 
-  <!-- Award badge: bottom-right -->
-  <div class="absolute bottom-10 right-10 z-10">
-    <AwardBadge />
+  <!-- Scroll indicator -->
+  <div class="hero-fade-up absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2" style="--reveal-delay: 0.6s">
+    <svg width="18" height="30" viewBox="0 0 18 30" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <rect x="1" y="1" width="16" height="28" rx="8" stroke="#c9a84c" stroke-opacity="0.6" stroke-width="1.5"/>
+      <circle class="scroll-dot" cx="9" cy="9" r="2" fill="#c9a84c"/>
+    </svg>
+    <p class="font-accent text-[9px] uppercase tracking-[0.2em] text-primary/50">
+      Scroll to Discover
+    </p>
   </div>
 
 </section>

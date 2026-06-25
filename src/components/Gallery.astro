@@ -1,7 +1,7 @@
 ---
 const count = 8;
 const images = Array.from({ length: count }, (_, i) => ({
-  src: `/images/gallery-${i + 1}.jpg`,
+  src: `/images/galleries/gallery-${i + 1}.jpg`,
   alt: `Ulmas Uraev — gallery image ${i + 1}`,
 }));
 ---
@@ -14,22 +14,22 @@ const images = Array.from({ length: count }, (_, i) => ({
     </div>
 
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      {images.map((img) => (
-        <div class="aspect-square overflow-hidden border border-divider group">
+      {images.map((img, i) => (
+        <div class="aspect-square overflow-hidden border border-divider group" data-reveal style={`--reveal-delay: ${Math.min(i * 0.06, 0.4)}s`}>
           <img
             src={img.src}
             alt={img.alt}
             loading="lazy"
-            class="w-full h-full object-cover photo-treated group-hover:scale-105 transition-transform duration-500"
+            class="w-full h-full object-cover photo-treated group-hover:scale-105 transition-transform duration-500 ease-out"
           />
         </div>
       ))}
     </div>
 
     <div class="text-center mt-12">
-      <button class="btn-gold-outline" type="button">
+      <!-- <button class="btn-gold-outline" type="button">
         Load More
-      </button>
+      </button> -->
     </div>
   </div>
 </section>
