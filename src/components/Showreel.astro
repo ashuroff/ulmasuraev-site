@@ -1,0 +1,37 @@
+---
+import Icon from "./Icon.astro";
+
+const videoId = "om4ZXlZPOj0";
+---
+
+<section id="showreel" class="bg-ink py-24 md:py-32">
+  <div class="max-w-5xl mx-auto px-6 md:px-10 text-center">
+    <p class="eyebrow text-sm mb-3">Watch</p>
+    <h2 class="section-heading text-3xl md:text-4xl mb-12">Showreel</h2>
+
+    <div class="relative aspect-video w-full border border-divider bg-card overflow-hidden group">
+      <iframe
+        class="absolute inset-0 w-full h-full"
+        src={`https://www.youtube.com/embed/${videoId}`}
+        title="Ulmas Uraev Showreel"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+        allowfullscreen
+      ></iframe>
+    </div>
+
+    <p class="text-muted text-sm mt-8 max-w-xl mx-auto leading-relaxed">
+      A selection of screen and stage work from the past several years.
+    </p>
+
+    <a
+      href={`https://www.youtube.com/watch?v=${videoId}`}
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 mt-6 font-accent text-sm uppercase tracking-[0.08em] text-gold hover:text-[var(--color-gold-hover)] transition-colors"
+    >
+      Watch Full Showreel
+      <Icon name="arrow-right" class="w-4 h-4" />
+    </a>
+  </div>
+</section>

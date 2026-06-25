@@ -1,0 +1,27 @@
+---
+const links = [
+  { href: "#about", label: "About" },
+  { href: "#filmography", label: "Filmography" },
+  { href: "#recognition", label: "Recognition" },
+  { href: "#showreel", label: "Showreel" },
+  { href: "#gallery", label: "Gallery" },
+  { href: "#contact", label: "Contact" },
+];
+---
+
+<header class="absolute top-0 left-0 right-0 z-20">
+  <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-6">
+    <a href="#" class="font-display text-lg tracking-wide text-primary">
+      Ulmas <span class="text-gold">Uraev</span>
+    </a>
+    <ul class="hidden md:flex items-center gap-8 font-accent text-xs uppercase tracking-[0.08em]">
+      {links.map((l) => (
+        <li>
+          <a href={l.href} class="text-primary/80 hover:text-gold transition-colors">
+            {l.label}
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+</header>

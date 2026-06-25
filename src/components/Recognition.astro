@@ -1,0 +1,41 @@
+---
+import Icon from "./Icon.astro";
+---
+
+<section id="recognition" class="bg-ink py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="text-center mb-14">
+      <p class="eyebrow text-sm mb-3">Honors</p>
+      <h2 class="section-heading text-3xl md:text-4xl">Recognition</h2>
+    </div>
+
+    <div class="bg-card border border-divider grid grid-cols-1 lg:grid-cols-2">
+      <div class="aspect-[4/3] lg:aspect-auto overflow-hidden">
+        <img
+          src="/images/diploma.jpg"
+          alt="Altyn Minbar Best Actor diploma"
+          class="w-full h-full object-cover photo-treated"
+        />
+      </div>
+      <div class="p-8 md:p-12 flex flex-col justify-center">
+        <Icon name="trophy" class="w-8 h-8 text-gold mb-5" />
+        <h3 class="font-display text-2xl md:text-3xl text-primary mb-2 leading-snug">
+          Best Actor of Feature Film
+        </h3>
+        <p class="text-gold font-accent text-sm uppercase tracking-[0.06em] mb-6">
+          Altyn Minbar — Kazan International Film Festival 2024
+        </p>
+        <div class="gold-divider mb-6"></div>
+        <p class="text-primary/90 leading-[1.75] mb-2">
+          <span class="text-muted">Film:</span> Evolution
+        </p>
+        <p class="text-primary/90 leading-[1.75] mb-6">
+          <span class="text-muted">Awarded by:</span> Deputy Prime Minister of the Republic of Tatarstan
+        </p>
+        <p class="text-muted italic leading-[1.75]">
+          A recognition of excellence in classical theatre-trained acting applied to contemporary cinema.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>

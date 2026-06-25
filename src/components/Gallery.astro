@@ -1,0 +1,35 @@
+---
+const count = 8;
+const images = Array.from({ length: count }, (_, i) => ({
+  src: `/images/gallery-${i + 1}.jpg`,
+  alt: `Ulmas Uraev — gallery image ${i + 1}`,
+}));
+---
+
+<section id="gallery" class="bg-ink py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="text-center mb-14">
+      <p class="eyebrow text-sm mb-3">Moments</p>
+      <h2 class="section-heading text-3xl md:text-4xl">Gallery</h2>
+    </div>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      {images.map((img) => (
+        <div class="aspect-square overflow-hidden border border-divider group">
+          <img
+            src={img.src}
+            alt={img.alt}
+            loading="lazy"
+            class="w-full h-full object-cover photo-treated group-hover:scale-105 transition-transform duration-500"
+          />
+        </div>
+      ))}
+    </div>
+
+    <div class="text-center mt-12">
+      <button class="btn-gold-outline" type="button">
+        Load More
+      </button>
+    </div>
+  </div>
+</section>

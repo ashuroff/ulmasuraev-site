@@ -1,0 +1,40 @@
+---
+import Icon from "./Icon.astro";
+
+interface Props {
+  variant?: "circle" | "text";
+  class?: string;
+}
+
+const { variant = "circle", class: className = "" } = Astro.props;
+
+const links = [
+  { name: "instagram" as const, href: "https://instagram.com/", label: "Instagram" },
+  { name: "youtube" as const, href: "https://www.youtube.com/watch?v=om4ZXlZPOj0", label: "YouTube" },
+  { name: "telegram" as const, href: "https://t.me/", label: "Telegram" },
+  { name: "imdb" as const, href: "https://www.imdb.com/", label: "IMDb" },
+];
+---
+
+{
+  variant === "circle" ? (
+    <div class={`flex items-center gap-3 ${className}`}>
+      {links.map((l) => (
+        <a href={l.href} target="_blank" rel="noopener noreferrer" aria-label={l.label} class="icon-circle">
+          <Icon name={l.name} class="w-4 h-4" />
+        </a>
+      ))}
+    </div>
+  ) : (
+    <div class={`flex items-center gap-4 font-accent text-xs uppercase tracking-[0.1em] ${className}`}>
+      {links.map((l, i) => (
+        <>
+          <a href={l.href} target="_blank" rel="noopener noreferrer" class="text-gold hover:text-[var(--color-gold-hover)] transition-colors">
+            {l.label}
+          </a>
+          {i < links.length - 1 && <span class="text-muted">·</span>}
+        </>
+      ))}
+    </div>
+  )
+}

@@ -1,0 +1,42 @@
+---
+import Icon from "./Icon.astro";
+import SocialLinks from "./SocialLinks.astro";
+
+const columns = [
+  {
+    icon: "phone" as const,
+    lines: ["+998 (99) 882-13-90"],
+  },
+  {
+    icon: "mail" as const,
+    lines: ["uraevulmas283@gmail.com"],
+  },
+  {
+    icon: "pin" as const,
+    lines: ["Tashkent, Uzbekistan", "Available for international travel"],
+  },
+];
+---
+
+<section id="contact" class="bg-ink py-24 md:py-32">
+  <div class="max-w-5xl mx-auto px-6 md:px-10 text-center">
+    <p class="eyebrow text-sm mb-3">Reach Out</p>
+    <h2 class="section-heading text-3xl md:text-4xl mb-4">Get in Touch</h2>
+    <p class="text-muted max-w-md mx-auto mb-16">
+      For casting inquiries, collaborations, and international projects.
+    </p>
+
+    <div class="grid grid-cols-1 sm:grid-cols-3 gap-10 mb-16">
+      {columns.map((c) => (
+        <div class="flex flex-col items-center">
+          <Icon name={c.icon} class="w-6 h-6 text-gold mb-4" />
+          {c.lines.map((line, i) => (
+            <p class={i === 0 ? "text-primary" : "text-muted text-sm mt-1"}>{line}</p>
+          ))}
+        </div>
+      ))}
+    </div>
+
+    <SocialLinks variant="text" class="justify-center" />
+  </div>
+</section>

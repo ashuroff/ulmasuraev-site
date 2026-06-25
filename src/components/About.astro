@@ -1,0 +1,60 @@
+---
+const stats = [
+  { value: "10+", label: "Years on Stage" },
+  { value: "6", label: "Credits in Film & TV" },
+  { value: "4", label: "Languages, Native to Fluent" },
+  { value: "Theatre & Film", label: "Professional" },
+];
+---
+
+<section id="about" class="bg-ink py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
+      <!-- Left: headshot -->
+      <div class="relative">
+        <div class="aspect-[4/5] w-full max-w-md overflow-hidden border border-divider">
+          <img
+            src="/images/headshot.jpg"
+            alt="Ulmas Uraev headshot"
+            class="w-full h-full object-cover photo-treated"
+          />
+        </div>
+      </div>
+
+      <!-- Right: bio + stats -->
+      <div>
+        <p class="eyebrow text-sm mb-3">Who He Is</p>
+        <h2 class="section-heading text-3xl md:text-4xl mb-8">About</h2>
+
+        <div class="space-y-5 text-primary/90 leading-[1.75] text-base md:text-[17px] mb-10">
+          <p>
+            Ulmas Uraev is an actor and director based in Tashkent with over ten years of
+            professional stage and screen experience. He holds a Master&rsquo;s degree in Theatre
+            Arts from the State Institute of Culture and Arts of Uzbekistan, where he studied
+            under Bakhodir Yuldashev — People&rsquo;s Artist of Uzbekistan.
+          </p>
+          <p>
+            His classical training shapes a nuanced, emotionally intelligent approach to
+            contemporary film and television. He performs as a lead actor at Turon Theatre while
+            directing student productions and conducting masterclasses in acting and directing.
+          </p>
+          <p>
+            In 2026, he made his international screen debut in <em class="font-display italic text-primary">Blind Sherlock</em>, a
+            Belgian-produced Netflix crime series.
+          </p>
+        </div>
+
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-4">
+          {stats.map((s) => (
+            <div class="stat-card">
+              <p class="font-display text-2xl md:text-3xl text-primary mb-1">{s.value}</p>
+              <p class="font-accent text-[11px] uppercase tracking-[0.06em] text-muted leading-snug">
+                {s.label}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>

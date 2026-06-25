@@ -1,0 +1,78 @@
+---
+const films = [
+  {
+    title: "Blind Sherlock",
+    subtitle: "Netflix Series",
+    year: "2026",
+    role: "Episode Role",
+    image: "/images/film-blind-sherlock.jpg",
+  },
+  {
+    title: "The Grand Amir and Donna Maria",
+    subtitle: "",
+    year: "2025",
+    role: "Episode Role",
+    image: "/images/film-grand-amir.jpg",
+  },
+  {
+    title: "Out",
+    subtitle: "Web Series",
+    year: "2025",
+    role: "Main Role",
+    image: "/images/film-out.jpg",
+  },
+  {
+    title: "Qora Kitob",
+    subtitle: "",
+    year: "2025",
+    role: "Episode Role",
+    image: "/images/film-qora-kitob.jpg",
+  },
+  {
+    title: "Ofitser 55",
+    subtitle: "TV Series",
+    year: "2023",
+    role: "Episode Role",
+    image: "/images/film-ofitser-55.jpg",
+  },
+  {
+    title: "Alteration",
+    subtitle: "",
+    year: "2022",
+    role: "Main Role",
+    image: "/images/film-alteration.jpg",
+  },
+];
+---
+
+<section id="filmography" class="bg-ink py-24 md:py-32">
+  <div class="max-w-7xl mx-auto px-6 md:px-10">
+    <div class="text-center mb-14">
+      <p class="eyebrow text-sm mb-3">Screen Work</p>
+      <h2 class="section-heading text-3xl md:text-4xl">Filmography</h2>
+    </div>
+
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      {films.map((f) => (
+        <article class="group bg-card border border-divider overflow-hidden">
+          <div class="relative aspect-[4/3] overflow-hidden">
+            <img
+              src={f.image}
+              alt={f.title}
+              class="w-full h-full object-cover photo-treated group-hover:scale-105 transition-transform duration-500"
+            />
+            <span class="absolute top-3 right-3 bg-ink/80 border border-gold text-gold font-accent text-xs px-2.5 py-1 tracking-[0.05em]">
+              {f.year}
+            </span>
+          </div>
+          <div class="p-5">
+            <h3 class="font-accent uppercase text-sm tracking-[0.04em] text-primary mb-1">
+              {f.title}{f.subtitle && <span class="text-muted"> ({f.subtitle})</span>}
+            </h3>
+            <p class="text-gold text-xs font-accent uppercase tracking-[0.06em]">{f.role}</p>
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,72 @@
+---
+import Icon from "./Icon.astro";
+import SocialLinks from "./SocialLinks.astro";
+import AwardBadge from "./AwardBadge.astro";
+---
+
+<section class="relative min-h-screen bg-ink overflow-hidden flex items-center">
+
+  <!-- Right: Actor photo (full-bleed, absolute) -->
+  <div class="absolute right-0 top-0 w-[62%] h-full">
+    <img
+      src="/images/hero.jpg"
+      alt="Ulmas Uraev, aktyor"
+      class="w-full h-full object-cover object-top photo-treated"
+    />
+    <!-- Blend left edge into background -->
+    <div class="absolute inset-0 bg-gradient-to-r from-ink via-ink/55 to-transparent"></div>
+    <!-- Subtle bottom fade -->
+    <div class="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-ink to-transparent"></div>
+  </div>
+
+  <!-- Main content -->
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 md:px-10 pt-36 pb-20">
+    <div class="max-w-[500px]">
+
+      <!-- Eyebrow -->
+      <p class="eyebrow text-[11px] mb-6 tracking-[0.18em]">
+        Aktyor | Teatr va Kino San'atkori
+      </p>
+
+      <!-- Title -->
+      <h1 class="font-display font-light leading-[0.88] mb-8 tracking-tight">
+        <span class="block text-[5.5rem] sm:text-[7rem] md:text-[8rem] text-primary">ULMAS</span>
+        <span class="block text-[5.5rem] sm:text-[7rem] md:text-[8rem] text-gold">URAEV</span>
+      </h1>
+
+      <!-- Quote -->
+      <div class="flex items-start gap-3 mb-10">
+        <span class="text-gold font-display text-5xl leading-[0.75] flex-shrink-0 mt-1 select-none">&ldquo;</span>
+        <p class="font-display italic text-xl md:text-[1.35rem] text-primary/80 leading-relaxed">
+          Har bir obraz — yangi hayot.<br />
+          Har bir sahna — yangi hikoya.
+        </p>
+      </div>
+
+      <!-- Buttons -->
+      <div class="flex flex-wrap items-center gap-4 mb-10">
+        <a
+          href="https://www.youtube.com/watch?v=om4ZXlZPOj0"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn-gold"
+        >
+          <Icon name="play" class="w-3.5 h-3.5" />
+          Showreel Ko'rish
+        </a>
+        <a href="#filmography" class="btn-gold-outline">
+          Portfolio Ko'rish
+        </a>
+      </div>
+
+      <!-- Social icons -->
+      <SocialLinks />
+    </div>
+  </div>
+
+  <!-- Award badge: bottom-right -->
+  <div class="absolute bottom-10 right-10 z-10">
+    <AwardBadge />
+  </div>
+
+</section>
