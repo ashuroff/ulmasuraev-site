@@ -1,35 +1,18 @@
 ---
 import Icon from "./Icon.astro";
 import SocialLinks from "./SocialLinks.astro";
-import AwardBadge from "./AwardBadge.astro";
 ---
 
 <section class="relative min-h-screen bg-ink overflow-hidden flex items-center">
 
-  <!-- Watermark: huge faint "ACTOR" behind the title -->
-  <p
-    class="hero-fade-up absolute left-6 md:left-10 top-[18%] font-display font-light text-[9rem] sm:text-[13rem] md:text-[16rem] leading-none text-primary/[0.04] select-none pointer-events-none whitespace-nowrap"
-    style="--reveal-delay: 0s"
-    aria-hidden="true"
-  >
-    ACTOR
-  </p>
-
-  <!-- Right: Actor photo (contained card, inset from edges) -->
-  <div class="hero-fade-up absolute right-6 md:right-10 top-28 md:top-32 bottom-24 w-[44%] sm:w-[42%] lg:w-[40%]" style="--reveal-delay: 0.1s">
-    <div class="relative w-full h-full overflow-hidden border border-divider">
+  <!-- Right: Actor photo (badge baked into the image, bigger and shifted toward center) -->
+  <div class="hero-fade-up absolute right-0 md:right-6 top-20 md:top-24 bottom-16 w-[40%] sm:w-[55%] lg:w-[54%]" style="--reveal-delay: 0.1s">
+    <div class="relative w-full h-full overflow-hidden">
       <img
-        src="/images/hero.jpg"
+        src="/images/hero_new.jpg"
         alt="Ulmas Uraev, actor"
-        class="w-full h-full object-cover object-top photo-treated"
+        class="w-full h-full object-cover object-top lg:object-right-top"
       />
-      <!-- Blend left edge into background -->
-      <div class="absolute inset-0 bg-gradient-to-r from-ink/40 via-transparent to-transparent"></div>
-    </div>
-
-    <!-- Award badge: top-right of photo, overlapping -->
-    <div class="absolute -top-6 -right-4 md:-right-8 z-20">
-      <AwardBadge />
     </div>
   </div>
 
