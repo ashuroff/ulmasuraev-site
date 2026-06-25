@@ -64,7 +64,7 @@ body {
   background-color: var(--color-gold);
   border: 1px solid var(--color-gold);
   padding: 0.85rem 1.75rem;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s ease;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -73,7 +73,6 @@ body {
 .btn-gold:hover {
   background-color: var(--color-gold-hover);
   border-color: var(--color-gold-hover);
-  letter-spacing: 0.09em;
 }
 
 .btn-gold-outline {
@@ -86,7 +85,7 @@ body {
   border: 1px solid var(--color-gold);
   background-color: transparent;
   padding: 0.85rem 1.75rem;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s ease;
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
@@ -95,7 +94,6 @@ body {
 .btn-gold-outline:hover {
   background-color: var(--color-gold);
   color: var(--color-ink);
-  letter-spacing: 0.09em;
 }
 
 .icon-circle {
@@ -107,7 +105,7 @@ body {
   align-items: center;
   justify-content: center;
   color: var(--color-primary);
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.25s ease;
 }
 
 .icon-circle:hover {
@@ -125,46 +123,47 @@ body {
   filter: grayscale(15%) contrast(1.1) brightness(0.85);
 }
 
-/* Scroll-reveal: progressive enhancement, hidden only once JS confirms it can reveal */
-html.js [data-reveal] {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-  transition-delay: var(--reveal-delay, 0s);
+.logo-mark {
+  position: relative;
+  width: 2.75rem;
+  height: 2.75rem;
+  flex-shrink: 0;
+  border: 1px solid var(--color-gold);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-html.js [data-reveal].is-revealed {
-  opacity: 1;
-  transform: translateY(0);
+.logo-mark-u {
+  position: absolute;
+  font-family: var(--font-display);
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html.js [data-reveal] {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
+.logo-mark-u--back {
+  color: var(--color-gold);
+  transform: translate(3px, -1px);
+  opacity: 0.85;
 }
 
-/* Hero load-in: not scroll-based, plays once on first paint */
-html.js .hero-fade-up {
-  opacity: 0;
-  transform: translateY(14px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1),
-              transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
-  transition-delay: var(--reveal-delay, 0s);
+.logo-mark-u--front {
+  color: var(--color-primary);
+  transform: translate(-3px, 1px);
 }
 
-html.js.hero-loaded .hero-fade-up {
-  opacity: 1;
-  transform: translateY(0);
+.nav-link {
+  position: relative;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  html.js .hero-fade-up {
-    opacity: 1;
-    transform: none;
-    transition: none;
-  }
+.nav-link--active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -2px;
+  height: 1px;
+  background-color: var(--color-gold);
 }
