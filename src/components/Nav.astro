@@ -1,5 +1,6 @@
 ---
 const links = [
+  { href: "#", label: "Home", active: true },
   { href: "#about", label: "About" },
   { href: "#filmography", label: "Filmography" },
   { href: "#recognition", label: "Recognition" },
@@ -11,17 +12,34 @@ const links = [
 
 <header class="absolute top-0 left-0 right-0 z-20">
   <nav class="max-w-7xl mx-auto flex items-center justify-between px-6 md:px-10 py-6">
-    <a href="#" class="font-display text-lg tracking-wide text-primary">
-      Ulmas <span class="text-gold">Uraev</span>
+    <a href="#" class="flex items-center gap-3">
+      <span class="logo-mark">
+        <span class="logo-mark-u logo-mark-u--front">U</span>
+        <span class="logo-mark-u logo-mark-u--back">U</span>
+      </span>
+      <span class="leading-tight">
+        <span class="block font-accent text-base md:text-lg font-semibold tracking-[0.06em] text-primary uppercase">
+          Ulmas Uraev
+        </span>
+        <span class="block font-accent text-[10px] tracking-[0.22em] text-gold uppercase">
+          Actor
+        </span>
+      </span>
     </a>
-    <ul class="hidden md:flex items-center gap-8 font-accent text-xs uppercase tracking-[0.08em]">
+    <ul class="hidden lg:flex items-center gap-8 font-accent text-xs uppercase tracking-[0.08em]">
       {links.map((l) => (
         <li>
-          <a href={l.href} class="text-primary/80 hover:text-gold transition-colors duration-300">
+          <a
+            href={l.href}
+            class={`nav-link pb-1 transition-colors ${l.active ? "nav-link--active text-gold" : "text-primary/80 hover:text-gold"}`}
+          >
             {l.label}
           </a>
         </li>
       ))}
     </ul>
+    <a href="#contact" class="hidden md:inline-flex btn-gold-outline !px-5 !py-2.5 !text-[11px]">
+      Collaborate
+    </a>
   </nav>
 </header>
