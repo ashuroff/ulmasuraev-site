@@ -53,13 +53,13 @@ const films = [
     </div>
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-      {films.map((f) => (
-        <article class="group bg-card border border-divider overflow-hidden">
+      {films.map((f, i) => (
+        <article class="group bg-card border border-divider overflow-hidden" data-reveal style={`--reveal-delay: ${Math.min(i * 0.08, 0.4)}s`}>
           <div class="relative aspect-[4/3] overflow-hidden">
             <img
               src={f.image}
               alt={f.title}
-              class="w-full h-full object-cover photo-treated group-hover:scale-105 transition-transform duration-500"
+              class="w-full h-full object-cover photo-treated group-hover:scale-105 transition-transform duration-500 ease-out"
             />
             <span class="absolute top-3 right-3 bg-ink/80 border border-gold text-gold font-accent text-xs px-2.5 py-1 tracking-[0.05em]">
               {f.year}

@@ -9,7 +9,7 @@ const videoId = "om4ZXlZPOj0";
     <p class="eyebrow text-sm mb-3">Watch</p>
     <h2 class="section-heading text-3xl md:text-4xl mb-12">Showreel</h2>
 
-    <div class="relative aspect-video w-full border border-divider bg-card overflow-hidden group">
+    <div class="relative aspect-video w-full border border-divider bg-card overflow-hidden group" data-reveal>
       <iframe
         class="absolute inset-0 w-full h-full"
         src={`https://www.youtube.com/embed/${videoId}`}
@@ -20,7 +20,7 @@ const videoId = "om4ZXlZPOj0";
       ></iframe>
     </div>
 
-    <p class="text-muted text-sm mt-8 max-w-xl mx-auto leading-relaxed">
+    <p class="text-muted text-sm mt-8 max-w-xl mx-auto leading-relaxed" data-reveal style="--reveal-delay: 0.1s">
       A selection of screen and stage work from the past several years.
     </p>
 
